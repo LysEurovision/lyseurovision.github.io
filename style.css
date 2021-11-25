@@ -309,6 +309,10 @@ body {
     margin-top: 0.5em;
 }
 
+.card .date .timezone {
+    font-size: 12px;
+}
+
 .card .details, .card .actions {
     display: inline-block;
     font-size: 18px;

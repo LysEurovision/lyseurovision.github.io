@@ -85,7 +85,7 @@
                         <div class="date-container">
                             <div class="day">${date.toLocaleString('default', { day: '2-digit' })}</div>
                             <div class="month">${date.toLocaleString('en-GB', { month: 'short' })}</div>
-                            ${isEventMoreThan7DaysAway ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + '</div>'}
+                            ${isEventMoreThan7DaysAway ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + '</div><div class="timezone">CET</div>'}
                         </div>
                     </div>
                     <div class="details">
