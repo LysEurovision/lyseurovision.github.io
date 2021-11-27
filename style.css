@@ -64,15 +64,15 @@ body {
     font-size: 14px;
 }
 
-.legend .title {
+.legend .title a {
     display: flex;
     align-items: center;
     font-size: 16px;
     font-style: italic;
+    text-decoration: none;
 }
 
-#legend-toggle {
-    text-decoration: none;
+#legend-toggle i {
     margin-left: 0.25em;
 }
 
