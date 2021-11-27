@@ -1,0 +1,673 @@
+[
+    {
+        "stage": "Night 1",
+        "id": 95,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2020-12-21T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "tv.rtsh.al/kanalet/rtsh-1"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "youtu.be/k4qJwX_OcWc"
+            }
+        ]
+    },
+    {
+        "stage": "Night 2",
+        "id": 96,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2020-12-22T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "tv.rtsh.al/kanalet/rtsh-1"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "youtube.com/channel/UC6tAjIpd8AWLI4ErBpBh2qg"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "youtu.be/Vl9f3OItARg"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 97,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2020-12-23T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "tv.rtsh.al/kanalet/rtsh-1"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "youtube.com/channel/UC6tAjIpd8AWLI4ErBpBh2qg"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "twitter.com/esc_upd/status/1341673938053705729"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 80,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-01-16T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 98,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2021-01-16T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 81,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-01-23T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002221&autoplay=false"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 102,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2021-01-23T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 89,
+        "name": "HaShir HaBa L\u2019Eurovizion",
+        "country": "Israel",
+        "dateTimeCet": "2021-01-25T20:15:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Kan 11",
+                "link": "https://www.kan.org.il/live/tv.aspx?stationid=2"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 3",
+        "id": 82,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-01-30T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002321&autoplay=false"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final",
+        "id": 99,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2021-01-30T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 104,
+        "name": "Eurovision France, C'est Vous Qui D\u00e9cidez",
+        "country": "France",
+        "dateTimeCet": "2021-01-30T21:05:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "France 2",
+                "link": "https://www.france.tv/france-2/eurovision-france"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "France 2",
+                "link": "https://europe.tv5monde.com/fr/direct"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 4",
+        "id": 83,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-02-06T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002421"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 101,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2021-02-06T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 74,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-02-06T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/video/29749198/melodifestivalen-2021/melodifestivalen-2021-deltavling-1-deltavling-1"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 5",
+        "id": 84,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-02-13T19:55:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002521"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 75,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-02-13T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://svtplay.se/video/29760254/melodifestivalen-2021/melodifestivalen-deltavling-2-1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 86,
+        "name": "Dora",
+        "country": "Croatia",
+        "dateTimeCet": "2021-02-13T20:10:00",
+        "watchLinks": [
+            {
+                "accountRequired": 1,
+                "channel": "HRT 1",
+                "link": "https://hrti.hrt.hr/live/tv?channel=40013"
+            }
+        ]
+    },
+    {
+        "stage": "Sistesjansen",
+        "id": 105,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-02-15T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002721"
+            }
+        ]
+    },
+    {
+        "stage": "Sistesjansen (part 2)",
+        "id": 104,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-02-15T21:20:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002821"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 70,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-02-18T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1 (part 2)",
+        "id": 107,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-02-18T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 71,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-02-20T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 85,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2021-02-20T19:55:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://nrk.no/mgp"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "https://tv.nrk.no/se?v=MUHU25002621"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 73,
+        "name": "Uuden Musiikin Kilpailu",
+        "country": "Finland",
+        "dateTimeCet": "2021-02-20T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Yle TV1",
+                "link": "https://areena.yle.fi/tv/ohjelmat/yle-tv1"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "Yle TV1",
+                "link": "https://arenan.yle.fi/1-50739097",
+                "comment": "English commentary"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 3",
+        "id": 76,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-02-20T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://svtplay.se/video/29807850/melodifestivalen-2021/melodifestivalen-2021-deltavling-3-deltavling-3"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2 (part 2)",
+        "id": 108,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-02-20T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 92,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2021-02-20T22:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 106,
+        "name": "Destino Eurovisi\u00f3n 2021",
+        "country": "Spain",
+        "dateTimeCet": "2021-02-20T22:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "La 1",
+                "link": "https://www.rtve.es/directo/la-1/"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 4",
+        "id": 77,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-02-27T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://svtplay.se/video/29807842/melodifestivalen-2021/melodifestivalen-2021-deltavling-4-deltavling-4"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 93,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2021-02-27T22:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 1",
+        "id": 65,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2021-03-02T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 2",
+        "id": 66,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2021-03-03T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 3",
+        "id": 67,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2021-03-04T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 4",
+        "id": 68,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2021-03-05T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 72,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-03-06T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 88,
+        "name": "Dansk Melodi Grand Prix",
+        "country": "Denmark",
+        "dateTimeCet": "2021-03-06T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "DR1",
+                "link": "https://www.dr.dk/tv/live/dr1"
+            }
+        ]
+    },
+    {
+        "stage": "Andra Chansen",
+        "id": 78,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-03-06T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://svtplay.se/video/29807854/melodifestivalen-2021/melodifestivalen-2021-andra-chansen-andra-chansen"
+            }
+        ]
+    },
+    {
+        "stage": "Final (part 2)",
+        "id": 95,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2021-03-06T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 69,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2021-03-06T20:45:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 94,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2021-03-06T22:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 109,
+        "name": "\u041d\u0430\u0446\u0438\u043e\u043d\u0430\u043b\u044c\u043d\u044b\u0439 \u043e\u0442\u0431\u043e\u0440",
+        "country": "Russia",
+        "dateTimeCet": "2021-03-08T18:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "",
+                "link": "https://www.1tv.ru/live"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "",
+                "link": "https://wink.rt.ru/tv/1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 79,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2021-03-13T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/video/30416620",
+                "comment": "English commentary"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://svtplay.se/video/29923950/melodifestivalen-2021/melodifestivalen-2021-finalen-finalen-2",
+                "comment": "Swedish"
+            }
+        ]
+    }
+]

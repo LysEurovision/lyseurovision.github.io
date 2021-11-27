@@ -1,0 +1,767 @@
+[
+    {
+        "stage": "Night 1",
+        "id": 27,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2019-12-19T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "https://www.rtsh.al/rtsh-live/RTSH1-HD.html"
+            }
+        ]
+    },
+    {
+        "stage": "Night 2",
+        "id": 28,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2019-12-20T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "https://www.rtsh.al/rtsh-live/RTSH1-HD.html"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 29,
+        "name": "Festivali i K\u00ebng\u00ebs",
+        "country": "Albania",
+        "dateTimeCet": "2019-12-22T20:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "https://youtu.be/EZXcAddY92k"
+            },
+            {
+                "accountRequired": 0,
+                "channel": "RTSH 1",
+                "link": "http://rtsh.al/rtsh-live/RTK1.html"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 13,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-01-11T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "tv.nrk.no/serie/melodi-grand-prix-tv/2020/MUHU26002120/avspiller"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 42,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-01-11T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 14,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-01-18T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 43,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-01-18T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 3",
+        "id": 15,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-01-25T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 3",
+        "id": 44,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-01-25T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 4",
+        "id": 16,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-02-01T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 45,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-02-01T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 1",
+        "id": 3,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-02-01T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 50,
+        "name": "Szansa na Sukces",
+        "country": "Poland",
+        "dateTimeCet": "2020-02-02T15:15:00",
+        "watchLinks": []
+    },
+    {
+        "stage": "Night 1",
+        "id": 34,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2020-02-04T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 2",
+        "id": 35,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2020-02-05T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 3",
+        "id": 36,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2020-02-06T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Night 4",
+        "id": 37,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2020-02-07T20:40:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 23,
+        "name": "Australia Decides",
+        "country": "Australia",
+        "dateTimeCet": "2020-02-08T10:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SBS",
+                "link": "https://facebook.com/SBSEurovision/"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 62,
+        "name": "Vidbir (Natsionalnyi Vidbir na Yevrobachennia)",
+        "country": "Ukraine",
+        "dateTimeCet": "2020-02-08T18:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "",
+                "link": "https://youtu.be/oP2fXqwkXyU"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 5",
+        "id": 17,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-02-08T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 46,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-02-08T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 2",
+        "id": 4,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-02-08T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 41,
+        "name": "Supernova",
+        "country": "Latvia",
+        "dateTimeCet": "2020-02-08T20:25:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LTV1",
+                "link": "https://ltv.lsm.lv/lv/tieshraide/ltv1/live.360/"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 20,
+        "name": "S\u00f6ngvakeppnin",
+        "country": "Iceland",
+        "dateTimeCet": "2020-02-08T20:45:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "R\u00daV",
+                "link": "https://www.ruv.is/sjonvarp/beint?channel=ruv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 38,
+        "name": "Festival di Sanremo",
+        "country": "Italy",
+        "dateTimeCet": "2020-02-08T20:45:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Rai 1",
+                "link": "https://www.raiplay.it/dirette/rai1"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 51,
+        "name": "Szansa na Sukces",
+        "country": "Poland",
+        "dateTimeCet": "2020-02-09T15:15:00",
+        "watchLinks": []
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 24,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2020-02-13T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "https://otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 48,
+        "name": "Vidbir (Natsionalnyi Vidbir na Yevrobachennia)",
+        "country": "Ukraine",
+        "dateTimeCet": "2020-02-15T18:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "",
+                "link": "https://youtu.be/-nfteYE8-Bk"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 25,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2020-02-15T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 55,
+        "name": "Depi Evratesil",
+        "country": "Armenia",
+        "dateTimeCet": "2020-02-15T19:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "1TV",
+                "link": "https://www.1tv.am/en/"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 18,
+        "name": "Melodi Grand Prix",
+        "country": "Norway",
+        "dateTimeCet": "2020-02-15T19:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "NRK1",
+                "link": "nrk.no/mgp"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 47,
+        "name": "Pabandom i\u0161 naujo",
+        "country": "Lithuania",
+        "dateTimeCet": "2020-02-15T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "LRT televizija",
+                "link": "lrt.lt/mediateka/tiesiogiai/lrt-televizija"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 3",
+        "id": 5,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-02-15T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 21,
+        "name": "S\u00f6ngvakeppnin",
+        "country": "Iceland",
+        "dateTimeCet": "2020-02-15T20:45:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "R\u00daV",
+                "link": "https://www.ruv.is/sjonvarp/"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 3",
+        "id": 52,
+        "name": "Szansa na Sukces",
+        "country": "Poland",
+        "dateTimeCet": "2020-02-16T15:15:00",
+        "watchLinks": []
+    },
+    {
+        "stage": "Final",
+        "id": 49,
+        "name": "Vidbir (Natsionalnyi Vidbir na Yevrobachennia)",
+        "country": "Ukraine",
+        "dateTimeCet": "2020-02-22T18:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "",
+                "link": "https://youtu.be/ESXAMeIvRNI"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 40,
+        "name": "EMA",
+        "country": "Slovenia",
+        "dateTimeCet": "2020-02-22T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "TV SLO 1",
+                "link": "https://4d.rtvslo.si/zivo/tvs1"
+            }
+        ]
+    },
+    {
+        "stage": "Heat 4",
+        "id": 6,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-02-22T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 31,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2020-02-22T22:50:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 53,
+        "name": "Szansa na Sukces",
+        "country": "Poland",
+        "dateTimeCet": "2020-02-23T15:15:00",
+        "watchLinks": []
+    },
+    {
+        "stage": "Final",
+        "id": 59,
+        "name": "Eurofest",
+        "country": "Belarus",
+        "dateTimeCet": "2020-02-28T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Belarus 1",
+                "link": "https://www.tvr.by/televidenie/belarus-1/"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 1",
+        "id": 56,
+        "name": "Beovizija",
+        "country": "Serbia",
+        "dateTimeCet": "2020-02-28T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 1,
+                "channel": "RTS Svet",
+                "link": "https://rtsplaneta.rs/linear/16889"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 26,
+        "name": "Eesti Laul",
+        "country": "Estonia",
+        "dateTimeCet": "2020-02-29T18:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "ETV",
+                "link": "https://otse.err.ee/k/etv"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 61,
+        "name": "O melodie pentru Europa",
+        "country": "Moldova",
+        "dateTimeCet": "2020-02-29T19:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Moldova 1",
+                "link": "http://www.trm.md/ro/moldova-1"
+            }
+        ]
+    },
+    {
+        "stage": "Andra Chansen",
+        "id": 7,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-02-29T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 39,
+        "name": "Dora",
+        "country": "Croatia",
+        "dateTimeCet": "2020-02-29T20:05:00",
+        "watchLinks": [
+            {
+                "accountRequired": 1,
+                "channel": "HRT 1",
+                "link": "https://hrti.hrt.hr/live/tv?channel=40013"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 22,
+        "name": "S\u00f6ngvakeppnin",
+        "country": "Iceland",
+        "dateTimeCet": "2020-02-29T20:45:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "R\u00daV",
+                "link": "https://www.ruv.is/sjonvarp/beint?channel=ruv"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 57,
+        "name": "Beovizija",
+        "country": "Serbia",
+        "dateTimeCet": "2020-02-29T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 1,
+                "channel": "RTS Svet",
+                "link": "https://rtsplaneta.rs/linear/16889"
+            }
+        ]
+    },
+    {
+        "stage": "Semi-final 2",
+        "id": 32,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2020-02-29T23:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 60,
+        "name": "Selec\u021bia Na\u021bional\u0103",
+        "country": "Romania",
+        "dateTimeCet": "2020-03-01T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "TVR 1",
+                "link": "https://www.tvrplus.ro/"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 58,
+        "name": "Beovizija",
+        "country": "Serbia",
+        "dateTimeCet": "2020-03-01T21:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 1,
+                "channel": "RTS Svet",
+                "link": "https://rtsplaneta.rs/linear/16889"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 63,
+        "name": "HaShir HaBa L'Eurovizion 2020",
+        "country": "Israel",
+        "dateTimeCet": "2020-03-03T19:30:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Kan 11",
+                "link": "https://www.kan.org.il/live/tv.aspx?stationid=2"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 19,
+        "name": "Dansk Melodi Grand Prix",
+        "country": "Denmark",
+        "dateTimeCet": "2020-03-07T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "DR1",
+                "link": "https://www.dr.dk/tv/live/dr1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 30,
+        "name": "Uuden Musiikin Kilpailu",
+        "country": "Finland",
+        "dateTimeCet": "2020-03-07T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "Yle TV1",
+                "link": "https://areena.yle.fi/tv/ohjelmat/yle-tv1"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 8,
+        "name": "Melodifestivalen",
+        "country": "Sweden",
+        "dateTimeCet": "2020-03-07T20:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "SVT1",
+                "link": "https://www.svtplay.se/melodifestivalen-2020"
+            }
+        ]
+    },
+    {
+        "stage": "Final",
+        "id": 33,
+        "name": "Festival da Can\u00e7\u00e3o",
+        "country": "Portugal",
+        "dateTimeCet": "2020-03-07T23:00:00",
+        "watchLinks": [
+            {
+                "accountRequired": 0,
+                "channel": "RTP1",
+                "link": "https://www.rtp.pt/play/direto/rtp1"
+            }
+        ]
+    }
+]
