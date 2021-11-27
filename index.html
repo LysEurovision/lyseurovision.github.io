@@ -146,7 +146,7 @@
         if (watchLinks.length == 0) {
             htmlString += `
                 <div class="watch-link no-link">
-                    <span class="title">No watch link available (yet?) :(</span>
+                    <span class="title">No watch link available (${isFuture ? 'yet' : 'anymore'}?) :(</span>
                 </div>
             `;
         }
@@ -206,7 +206,7 @@
                 let date = new Date(event['dateTimeCet']);
                 date.setHours(date.getHours() + 2);
                 return date < TODAY;
-            }).sort((e1, e2) => e1['dateTimeCet'] === e2['dateTimeCet'] ? e1['country'] < e2['country'] : e1['dateTimeCet'] < e2['dateTimeCet']);
+            }).sort((e1, e2) => e1['dateTimeCet'] == e2['dateTimeCet'] ? ('' + e1['country']).localeCompare('' + e2['country']) : ('' + e1['dateTimeCet']).localeCompare('' + e2['dateTimeCet']));
 
             FUTURE_EVENTS = data.filter(event => {
                 let date = new Date(event['dateTimeCet']);
@@ -235,7 +235,8 @@
             $("#show-past-events").css("display", "none");
             $(".month-label:first").remove();
             let lastMonth = new Date(FUTURE_EVENTS[0]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' });
-            PAST_EVENTS.forEach((event) => {
+            for (let i=PAST_EVENTS.length - 1; i>=0; i--) {
+                const event = PAST_EVENTS[i];
                 const date = new Date(event['dateTimeCet']);
                 const month = date.toLocaleString('en-GB', { month: 'long' });
                 if (month != lastMonth) {
@@ -243,8 +244,8 @@
                     lastMonth = month;
                 }
                 addEvent(event, date, false);
-            });
-            addMonthLabel(new Date(PAST_EVENTS[PAST_EVENTS.length - 1]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' }), false);
+            }
+            addMonthLabel(new Date(PAST_EVENTS[0]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' }), false);
             enableWatchLinks(false);
         });
     })
