@@ -89,6 +89,7 @@
     function addEvent(event, date, isFuture) {
         const isChannelPresent = event['watchLinks'] && event['watchLinks'].length > 0 && 'channel' in event['watchLinks'][0] && event['watchLinks'][0]['channel'] != "";
         const isEventMoreThan7DaysAway = Math.round((date - TODAY) / ONE_DAY) > 7;
+        const isTimePlaceholder = event['dateTimeCet'].substring(11, 16) == "00:00";
         const watchLinks = event['watchLinks']
             .filter(link => isFuture ? link['live'] : link['replayable']) // if the event is in the future, show only the links that can be viewed live; if it's in the past, show only the links that can be viewed on replay
             .sort((l1, l2) => l1['comment'] == 'Recommended link' ? -1 : 1);
@@ -102,7 +103,7 @@
                         <div class="date-container">
                             <div class="day">${date.toLocaleString('default', { day: '2-digit' })}</div>
                             <div class="month">${date.toLocaleString('en-GB', { month: 'short' })}</div>
-                            ${isEventMoreThan7DaysAway ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + '</div><div class="timezone">CET</div>'}
+                            ${isEventMoreThan7DaysAway || isTimePlaceholder ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + '</div><div class="timezone">CET</div>'}
                         </div>
                     </div>
                     <div class="details">
