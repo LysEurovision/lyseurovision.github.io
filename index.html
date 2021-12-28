@@ -231,7 +231,7 @@
         $("#show-past-events").click(function() {
             $("#show-past-events").css("display", "none");
             $(".month-label:first").remove();
-            let lastMonth = new Date(FUTURE_EVENTS[0]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' });
+            let lastMonth = new Date(FUTURE_EVENTS.length > 0 ? FUTURE_EVENTS[0]['dateTimeCet'] : PAST_EVENTS[PAST_EVENTS.length - 1]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' });
             for (let i=PAST_EVENTS.length - 1; i>=0; i--) {
                 const event = PAST_EVENTS[i];
                 const date = new Date(event['dateTimeCet']);
