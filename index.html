@@ -211,6 +211,17 @@
                 return event['dateTimeCet'] >= todayAsStr;
             });
 
+            if (FUTURE_EVENTS.length == 0) {
+                if (PAST_EVENTS.length == 0) {
+                    $("#no-event .season-start").css("display", "inline");
+                    $("#no-event .season-end").css("display", "none");
+                } else {
+                    $("#no-event .season-start").css("display", "none");
+                    $("#no-event .season-end").css("display", "inline");
+                }
+                $("#no-event").css("display", "block");
+            }
+
             let lastMonth = "";
             FUTURE_EVENTS.forEach((event) => {
                 const date = new Date(event['dateTimeCet']);
@@ -229,6 +240,7 @@
         });
 
         $("#show-past-events").click(function() {
+            $("#no-event").css("display", "none");
             $("#show-past-events").css("display", "none");
             $(".month-label:first").remove();
             let lastMonth = new Date(FUTURE_EVENTS.length > 0 ? FUTURE_EVENTS[0]['dateTimeCet'] : PAST_EVENTS[PAST_EVENTS.length - 1]['dateTimeCet']).toLocaleString('en-GB', { month: 'long' });
@@ -282,5 +294,9 @@
         <span>Show past</span>
     </a>
     <div id="calendar">
+    </div>
+    <div id="no-event">
+        <div id="no-event-title">No show <span class="season-start">yet</span><span class="season-end">left</span>! :(</div>
+        <div id="no-event-description">There is no scheduled Eurovision national final show <span class="season-start">yet</span><span class="season-end">left</span> this season. Come back later<span class="season-end"> (or browse this season's past shows by clicking the "Show past" button above)</span>!</div>
     </div>
 </body>
