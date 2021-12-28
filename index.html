@@ -57,7 +57,6 @@
         "Ukraine": "\uD83C\uDDFA\uD83C\uDDE6",
         "Kosovo": "\uD83C\uDDFD\uD83C\uDDF0"
     }
-    const ONE_DAY = 24 * 60 * 60 * 1000;
     const TODAY = new Date();
     let PAST_EVENTS = [];
     let FUTURE_EVENTS = [];
@@ -202,13 +201,13 @@
         });
 
         $.getJSON("https://raw.githubusercontent.com/LysEurovision/lyseurovision.github.io/main/lys_dump.json", function(data, status) {
-            const todayAsStr = TODAY.toLocaleString('se-SE', { timeZone: 'CET'}).replace(' ', 'T');
+            const todayMinus2HoursAsStr = new Date(TODAY.getTime() - (119 * 60000)).toLocaleString('se-SE', { timeZone: 'CET'}).replace(' ', 'T');
             PAST_EVENTS = data.filter(event => {
-                return event['dateTimeCet'] < todayAsStr;
+                return event['dateTimeCet'] < todayMinus2HoursAsStr;
             }).sort((e1, e2) => e1['dateTimeCet'] == e2['dateTimeCet'] ? ('' + e1['country']).localeCompare('' + e2['country']) : ('' + e1['dateTimeCet']).localeCompare('' + e2['dateTimeCet']));
 
             FUTURE_EVENTS = data.filter(event => {
-                return event['dateTimeCet'] >= todayAsStr;
+                return event['dateTimeCet'] >= todayMinus2HoursAsStr;
             });
 
             if (FUTURE_EVENTS.length == 0) {
