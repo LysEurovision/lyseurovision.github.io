@@ -449,6 +449,12 @@ body {
     margin-top: 1em;
 }
 
+.help-image {
+    width: 100%;
+    height: 300px;
+    background-size: 100%;
+}
+
 @media (max-width:600px)  {
     .card, .header, .legend, .month-label, .nav, .content, #no-event {
         width: 97%;
