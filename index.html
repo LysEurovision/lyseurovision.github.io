@@ -57,6 +57,7 @@
         "Ukraine": "\uD83C\uDDFA\uD83C\uDDE6",
         "Kosovo": "\uD83C\uDDFD\uD83C\uDDF0"
     }
+    const ONE_DAY = 24 * 60 * 60 * 1000;
     const TODAY = new Date();
     let PAST_EVENTS = [];
     let FUTURE_EVENTS = [];
@@ -88,11 +89,28 @@
     function addEvent(event, date, isFuture) {
         const isChannelPresent = event['watchLinks'] && event['watchLinks'].length > 0 && 'channel' in event['watchLinks'][0] && event['watchLinks'][0]['channel'] != "";
         const isTimePlaceholder = event['dateTimeCet'].substring(11, 16) == "00:00";
+        let isEventMoreThan7DaysAway = true;
         const watchLinks = event['watchLinks']
             .filter(link => isFuture ? link['live'] : link['replayable']) // if the event is in the future, show only the links that can be viewed live; if it's in the past, show only the links that can be viewed on replay
             .sort((l1, l2) => l1['comment'] == 'Recommended link' ? -1 : 1);
         const isGeoblocked = event["watchLinks"].length == 1 && event['watchLinks'][0]['geoblocked'] == true;
         const isAccountRequired = event["watchLinks"].length == 1 && event['watchLinks'][0]['accountRequired'] == true;
+
+        let delta = 0;
+        let hours = 0;
+        let minutes = 0;
+        if (!isTimePlaceholder) {
+            isEventMoreThan7DaysAway = Math.round((date - TODAY) / ONE_DAY) > 7;
+            if (!isEventMoreThan7DaysAway) {
+                delta = Math.abs(new Date(event['dateTimeCet']).getTime() - new Date(event['endDateTimeCet']).getTime()) / 1000;
+                hours = Math.floor(delta / 3600) % 24;
+                delta -= hours * 3600;
+                minutes = Math.floor(delta / 60) % 60;
+                if (minutes < 10) {
+                    minutes = "0" + minutes;
+                }
+            }
+        }
 
         let htmlString = `
             <div class="card ${isFuture ? '' : 'past-event'}">
@@ -101,7 +119,8 @@
                         <div class="date-container">
                             <div class="day">${date.toLocaleString('default', { day: '2-digit' })}</div>
                             <div class="month">${date.toLocaleString('en-GB', { month: 'short' })}</div>
-                            ${isTimePlaceholder ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + '</div><div class="timezone">CET</div>'}
+                            ${isTimePlaceholder ? '' : '<div class="time">' + date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'}) + ' CET</div>'}
+                            ${isTimePlaceholder || isEventMoreThan7DaysAway ? '' : '<div class="duration"><i class="material-icons">hourglass_empty</i><span class="string">' + hours + 'h' + minutes + '</span></div>'}
                         </div>
                     </div>
                     <div class="details">

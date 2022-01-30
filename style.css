@@ -297,10 +297,26 @@ body {
 .card .date .time {
     font-size: 14px;
     margin-top: 0.5em;
+    text-align: center;
 }
 
-.card .date .timezone {
+/*.card .date .timezone {
     font-size: 12px;
+}*/
+
+.card .date .duration {
+    margin-top: 0.25em;
+    display: flex;
+    align-items: center;
+}
+
+.card .date .duration .material-icons {
+    font-size: 14px;
+}
+
+.card .date .duration .string {
+    font-size: 12px;
+    font-style: italic;
 }
 
 .card .details, .card .actions {
@@ -466,6 +482,12 @@ body {
     }
 }
 
+@media (max-width:380px)  {
+    .card .date .time {
+        font-size: 3.5vw;
+    }
+}
+
 /*.watch-link div {
     display: inline-block;
     height: 100%;
@@ -504,6 +526,10 @@ body {
 
 .dark-mode .card .date {
     border-image: linear-gradient(to bottom, transparent 0, transparent 15%, #fff 15%, #fff 85%, transparent 85%, transparent 100% ) 10 / 0 2px 0 0;
+}
+
+.dark-mode .card .date .duration {
+    color:  #808080;
 }
 
 .dark-mode .label {
@@ -600,6 +626,10 @@ body {
 
 .light-mode .card .date {
     border-image: linear-gradient(to bottom, transparent 0, transparent 15%, #000 15%, #000 85%, transparent 85%, transparent 100% ) 10 / 0 2px 0 0;
+}
+
+.light-mode .card .date .duration {
+    color:  #404040;
 }
 
 .light-mode .label {
