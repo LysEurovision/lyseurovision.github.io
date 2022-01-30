@@ -273,7 +273,7 @@ body {
 .card .date {
     display: flex;
     align-items: center;
-    width: 18%;
+    width: 20%;
     border-right-style: solid;
 }
 
