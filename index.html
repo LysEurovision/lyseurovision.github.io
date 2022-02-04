@@ -130,7 +130,7 @@
                                 <div class="show-name">${event['name']}</div>
                                 <div class="show-stage">${event['stage']}</div>
                                 <div class="labels">
-                                    ${isChannelPresent ? '<div class="label">' + event['watchLinks'][0]['channel'] + '</div>' : ''}
+                                    ${isChannelPresent ? '<div class="label">' + watchLinks[0]['channel'] + '</div>' : ''}
                                     ${isAccountRequired ? '<div class="label">Account required</div>' : ''}
                                     ${isGeoblocked ? '<div class="label red">Geoblocked</div>' : ''}
                                 </div>
