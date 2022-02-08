@@ -87,12 +87,18 @@
     }
 
     function addEvent(event, date, isFuture) {
-        const isChannelPresent = event['watchLinks'] && event['watchLinks'].length > 0 && 'channel' in event['watchLinks'][0] && event['watchLinks'][0]['channel'] != "";
         const isTimePlaceholder = event['dateTimeCet'].substring(11, 16) == "00:00";
         let isEventMoreThan7DaysAway = true;
         const watchLinks = event['watchLinks']
             .filter(link => isFuture ? link['live'] : link['replayable']) // if the event is in the future, show only the links that can be viewed live; if it's in the past, show only the links that can be viewed on replay
             .sort((l1, l2) => l1['comment'] == 'Recommended link' ? -1 : 1);
+        const isChannelPresent = (watchLinks && watchLinks.length > 0 && 'channel' in watchLinks[0] && watchLinks[0]['channel'] != "") || (event['watchLinks'] && event['watchLinks'].length > 0 && 'channel' in event['watchLinks'][0] && event['watchLinks'][0]['channel'] != "");
+        let displayChannel = "";
+        if (watchLinks && watchLinks.length > 0 && 'channel' in watchLinks[0]) {
+            displayChannel = watchLinks[0]['channel'];
+        } else if (event['watchLinks'] && event['watchLinks'].length > 0 && 'channel' in event['watchLinks'][0]) {
+            displayChannel = event['watchLinks'][0]['channel'];
+        }
         const isGeoblocked = event["watchLinks"].length == 1 && event['watchLinks'][0]['geoblocked'] == true;
         const isAccountRequired = event["watchLinks"].length == 1 && event['watchLinks'][0]['accountRequired'] == true;
 
@@ -130,7 +136,7 @@
                                 <div class="show-name">${event['name']}</div>
                                 <div class="show-stage">${event['stage']}</div>
                                 <div class="labels">
-                                    ${isChannelPresent ? '<div class="label">' + watchLinks[0]['channel'] + '</div>' : ''}
+                                    ${displayChannel != "" ? '<div class="label">' + displayChannel + '</div>' : ''}
                                     ${isAccountRequired ? '<div class="label">Account required</div>' : ''}
                                     ${isGeoblocked ? '<div class="label red">Geoblocked</div>' : ''}
                                 </div>
