@@ -241,7 +241,14 @@
             // (12, for a scale of 5 minutes) + an offset of columns corresponding to the start of the chart
             // (the difference in minutes between the start time of the first event and the current hour)
             const centerPositionOnGrid = (hour - chartStartHour) * 12 + offset;
-            const gridColumnForLabel = centerPositionOnGrid < 4 ? '1 / 8' : (centerPositionOnGrid - 3) + ' / ' + (centerPositionOnGrid + 4);
+            let gridColumnForLabel = "";
+            if (centerPositionOnGrid < 4) {
+                gridColumnForLabel = "1 / 8";
+            } else if (centerPositionOnGrid + 4 > scopeInMinutes / 5) { // = the end cell of the label would be outside of the grid
+                gridColumnForLabel = ((scopeInMinutes / 5) - 6) + " / " + ((scopeInMinutes / 5) + 1);
+            } else {
+                gridColumnForLabel = (centerPositionOnGrid - 3) + " / " + (centerPositionOnGrid + 4);
+            }
             const labelHtmlString = `<div class="chart-label" style="grid-column: ${gridColumnForLabel}"><span class="chart-label-text">${((hour % 24) < 10 ? '0' : '') + (hour % 24)}:00 CET</span></div>`;
             const separatorHtmlString = `<div class="chart-separator" style="grid-column: ${centerPositionOnGrid}; --height: ${todaysCountries.length}"><div class="chart-separator-filling"></div></div>`;
             $("#next-events-chart").append(labelHtmlString);
@@ -337,7 +344,7 @@
                 return event['dateTimeCet'].substring(0, 10) == todayAsStr.substring(0, 10) && event['dateTimeCet'].substring(11, 16) >= "17:00";
             });
 
-            if (TODAY_EVENTS.length > 2) {
+            if ((new Set(TODAY_EVENTS.map(e => e['country']))).size > 1) {
                 displayEventsChart(TODAY_EVENTS);
             }
 

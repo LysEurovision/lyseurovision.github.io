@@ -615,6 +615,12 @@ a#show-schedule {
     margin: 0 auto;
     margin-top: -5px;
 }
+.chart-wrapper div.chart-separator[style*="grid-column: 0;"] > div.chart-separator-filling {
+    margin-left: 0;
+}
+.chart-wrapper div.chart-label[style*="grid-column: 1 / 8"] {
+    justify-content: left;
+}
 
 @media (max-width:600px)  {
     .card, .header, .legend, .month-label, .nav, .content, #no-event, .chart-container, .chart-wrapper, .content-title, #schedule-header {
