@@ -240,17 +240,26 @@
             // chart (hour - chartStartHour) * the number of columns used on the grid to represent an hour
             // (12, for a scale of 5 minutes) + an offset of columns corresponding to the start of the chart
             // (the difference in minutes between the start time of the first event and the current hour)
-            const centerPositionOnGrid = (hour - chartStartHour) * 12 + offset;
+            let centerPositionOnGrid = (hour - chartStartHour) * 12 + offset;
+            let shouldAlignSeparatorToRight = false;
+            if (centerPositionOnGrid < scopeInMinutes / 5) {
+                centerPositionOnGrid += 1;
+            } else {
+                shouldAlignSeparatorToRight = true;
+            }
+
             let gridColumnForLabel = "";
+            let shouldAlignLabelToRight = false;
             if (centerPositionOnGrid < 4) {
                 gridColumnForLabel = "1 / 8";
             } else if (centerPositionOnGrid + 4 > scopeInMinutes / 5) { // = the end cell of the label would be outside of the grid
                 gridColumnForLabel = ((scopeInMinutes / 5) - 6) + " / " + ((scopeInMinutes / 5) + 1);
+                shouldAlignLabelToRight = true;
             } else {
                 gridColumnForLabel = (centerPositionOnGrid - 3) + " / " + (centerPositionOnGrid + 4);
             }
-            const labelHtmlString = `<div class="chart-label" style="grid-column: ${gridColumnForLabel}"><span class="chart-label-text">${((hour % 24) < 10 ? '0' : '') + (hour % 24)}:00 CET</span></div>`;
-            const separatorHtmlString = `<div class="chart-separator" style="grid-column: ${centerPositionOnGrid}; --height: ${todaysCountries.length}"><div class="chart-separator-filling"></div></div>`;
+            const labelHtmlString = `<div class="chart-label" style="grid-column: ${gridColumnForLabel};${shouldAlignLabelToRight ? '; justify-content: right;' : ''}"><span class="chart-label-text">${((hour % 24) < 10 ? '0' : '') + (hour % 24)}:00 CET</span></div>`;
+            const separatorHtmlString = `<div class="chart-separator" style="grid-column: ${centerPositionOnGrid}; --height: ${todaysCountries.length}"><div class="chart-separator-filling"${shouldAlignSeparatorToRight ? ' style="float: right;"' : ''}></div></div>`;
             $("#next-events-chart").append(labelHtmlString);
             $("#next-events-chart").append(separatorHtmlString);
         });
