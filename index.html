@@ -339,7 +339,7 @@
         });
 
         $.getJSON("https://raw.githubusercontent.com/LysEurovision/lyseurovision.github.io/main/lys_dump.json", function(data, status) {
-            const todayAsStr = TODAY.toLocaleString('se-SE', { timeZone: 'CET'}).replace(' ', 'T');
+            const todayAsStr = TODAY.toLocaleString('sv-SE', { timeZone: 'CET'}).replace(' ', 'T');
 
             PAST_EVENTS = data.filter(event => {
                 return event['endDateTimeCet'] < todayAsStr;
