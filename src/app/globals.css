@@ -6,6 +6,17 @@
   }
 }
 
+@keyframes shimmer-rotate {
+  from { --border-angle: 0deg; }
+  to { --border-angle: 360deg; }
+}
+
+@property --border-angle {
+  syntax: '<angle>';
+  inherits: false;
+  initial-value: 0deg;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

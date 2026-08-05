@@ -54,3 +54,10 @@ export const FLAG_EMOJIS = {
     "Ukraine": "\uD83C\uDDFA\uD83C\uDDE6",
     "Kosovo": "\uD83C\uDDFD\uD83C\uDDF0"
 };
+
+export const dateTimeFormatter = new Intl.DateTimeFormat('sv-SE', {
+    timezone: 'Europe/Vienna',
+    year: 'numeric', month: '2-digit', day: '2-digit',
+    hour: '2-digit', minute: '2-digit', second: '2-digit',
+    hour12: false
+});

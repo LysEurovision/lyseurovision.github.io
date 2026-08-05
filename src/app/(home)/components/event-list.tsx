@@ -5,20 +5,24 @@ import { use, useState } from 'react';
 import EventCard from '@/app/(home)/components/event-card';
 import { ArrowUp, Calendar, Trophy } from 'lucide-react';
 import { clsx } from 'clsx';
+import { dateTimeFormatter } from '@/app/(home)/utils';
 
 export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<Event, 'past' | 'live'>> }) {
-    const formatter = new Intl.DateTimeFormat('sv-SE', {
-        timezone: 'Europe/Vienna',
-        year: 'numeric', month: '2-digit', day: '2-digit',
-        hour: '2-digit', minute: '2-digit', second: '2-digit',
-        hour12: false
-    });
-    const nowStr = formatter.format(new Date()).replace(' ', 'T');
+    const now = new Date();
+    const nowStr = dateTimeFormatter.format(now).replace(' ', 'T');
+    const daysUntilSunday = (7 - now.getDay()) % 7;
+    const daysSinceMonday = (now.getDay() + 6) % 7;
+    const eow = new Date();
+    const sow = new Date();
+    eow.setDate(now.getDate() + daysUntilSunday);
+    sow.setDate(now.getDate() - daysSinceMonday);
+    const eowStr = dateTimeFormatter.format(eow).slice(0, 10) + "T23:59:59";
+    const sowStr = dateTimeFormatter.format(sow).slice(0, 10) + "T00:00:00";
+
     const events: Event[] = (use(loadedEvents) as Omit<Event, 'past'>[]).map(e => ({
         ...e,
         past: e.endDateTimeCet < nowStr,
-        // live: e.dateTimeCet >= nowStr && e.endDateTimeCet <= nowStr,
-        live: true,
+        live: e.dateTimeCet >= nowStr && e.endDateTimeCet <= nowStr,
     }));
 
     const getUpcomingEvents = (events: Event[]) => {
@@ -37,14 +41,23 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<E
         setShowPast(true);
     }
 
+    const isEventThisWeek: (event: Event) => boolean = (event: Event) => {
+        return event.dateTimeCet >= sowStr && event.endDateTimeCet <= eowStr;
+    };
+
     function eventFilterPredicate(event: Event, showFinals: boolean, showThisWeek: boolean): boolean {
         return (!showFinals ? true : event.stage === 'Final' || event.stage === 'Eurovision Night')
-            && (!showThisWeek ? true : true);
+            && (!showThisWeek ? true : isEventThisWeek(event));
     }
 
     const toggleShowFinals = () => {
         setDisplayedEvents(baseEvents.filter(event => eventFilterPredicate(event, !showFinals, showThisWeek)));
         setShowFinals(!showFinals);
+    };
+
+    const toggleShowThisWeek = () => {
+        setDisplayedEvents(baseEvents.filter(event => eventFilterPredicate(event, showFinals, !showThisWeek)));
+        setShowThisWeek(!showThisWeek);
     };
 
     return (
@@ -57,7 +70,7 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<E
                     <div
                         className={clsx('flex items-center gap-1 cursor-pointer px-2 py-1 rounded-full border-1 border-foreground/25',
                             {
-                                'bg-foreground/10': showFinals,
+                                'bg-sky-500 border-sky-500': showFinals,
                             }
                         )}
                         onClick={toggleShowFinals}
@@ -66,7 +79,13 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<E
                         Finals
                     </div>
                     <div
-                        className="flex items-center gap-1 cursor-pointer px-2 py-1 rounded-full border-1 border-foreground/25">
+                        className={clsx('flex items-center gap-1 cursor-pointer px-2 py-1 rounded-full border-1 border-foreground/25',
+                            {
+                                'bg-sky-500 border-sky-500': showThisWeek,
+                            }
+                        )}
+                        onClick={toggleShowThisWeek}
+                    >
                         <Calendar className="w-4"/>
                         This week
                     </div>
@@ -98,14 +117,14 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<E
             </div>}
 
             {/* No events to show (based on constraining filters) */}
-            {displayedEvents.length === 0 && showThisWeek && <div className="flex flex-col gap-3 text-center">
+            {displayedEvents.length === 0 && showThisWeek && <div className="mt-3 flex flex-col gap-3 text-center">
                 <div className="text-3xl">No event to show :(</div>
-                <div>Try disabling one of your filters</div>
+                <div>Try disabling one of your filters to broaden your search{ showPast ? <>.</> : <>, or expand your search to past events by clicking the "Show past" button above</>}</div>
             </div>}
 
             {/* No more events to show */}
             {baseEvents.length === 0 && events.length > 0 && !showThisWeek &&
-                <div className="flex flex-col gap-3 text-center">
+                <div className="mt-3 flex flex-col gap-3 text-center">
                     <div className="text-3xl">No show left! :(</div>
                     <div>There is no scheduled Eurovision national final show left this season. Come back later (or
                         browse this season's past shows by clicking the "Show past" button above)!
@@ -114,7 +133,7 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<E
 
             {/* No events to show yet */}
             {baseEvents.length === 0 && events.length === 0 && !showThisWeek &&
-                <div className="flex flex-col gap-3 text-center">
+                <div className="mt-3 flex flex-col gap-3 text-center">
                     <div className="text-3xl">No show yet! :(</div>
                     <div>There is no scheduled Eurovision national final show yet this season. Come back later!</div>
                 </div>}

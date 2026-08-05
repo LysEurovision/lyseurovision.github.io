@@ -19,7 +19,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
                     disableTransitionOnChange
                 >
                     <div className="w-full h-full overflow-scroll bg-gray-100 dark:bg-background">
-                        <div className="flex flex-col gap-3 md:w-[450px] mx-auto p-3 md:p-0 md:pt-3">
+                        <div className="flex flex-col gap-3 md:w-[450px] mx-auto p-3 md:px-0">
                             <Header/>
                             {children}
                         </div>
