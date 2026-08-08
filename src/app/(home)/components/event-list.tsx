@@ -1,25 +1,24 @@
 'use client';
 
-import { Event } from '../../model/event';
+import { BackendEvent, Event } from '../../model/event';
 import { use, useState } from 'react';
 import EventCard from '@/app/(home)/components/event-card';
 import { ArrowUp, Calendar, Trophy } from 'lucide-react';
 import { clsx } from 'clsx';
-import { dateTimeFormatter } from '@/app/(home)/utils';
 
-export default function EventList({loadedEvents}: { loadedEvents: Promise<Omit<Event, 'past' | 'live'>> }) {
+export default function EventList({loadedEvents}: { loadedEvents: Promise<BackendEvent> }) {
     const now = new Date();
-    const nowStr = dateTimeFormatter.format(now).replace(' ', 'T');
+    const nowStr = now.toISOString().replace(' ', 'T');
     const daysUntilSunday = (7 - now.getDay()) % 7;
     const daysSinceMonday = (now.getDay() + 6) % 7;
     const eow = new Date();
     const sow = new Date();
     eow.setDate(now.getDate() + daysUntilSunday);
     sow.setDate(now.getDate() - daysSinceMonday);
-    const eowStr = dateTimeFormatter.format(eow).slice(0, 10) + "T23:59:59";
-    const sowStr = dateTimeFormatter.format(sow).slice(0, 10) + "T00:00:00";
+    const eowStr = eow.toISOString().slice(0, 10) + "T23:59:59";
+    const sowStr = sow.toISOString().slice(0, 10) + "T00:00:00";
 
-    const events: Event[] = (use(loadedEvents) as Omit<Event, 'past'>[]).map(e => ({
+    const events: Event[] = (use(loadedEvents) as BackendEvent[]).map(e => ({
         ...e,
         past: e.endDateTimeCet < nowStr,
         live: e.dateTimeCet >= nowStr && e.endDateTimeCet <= nowStr,

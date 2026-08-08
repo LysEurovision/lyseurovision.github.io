@@ -1,5 +1,5 @@
 import { Event } from '../../model/event';
-import { FLAG_EMOJIS } from '../utils';
+import { FLAG_EMOJIS, getEventDurationInMinutes } from '../utils';
 import { Cast, ChevronUp, GlobeOff, Hourglass, Play, RotateCcw, User } from 'lucide-react';
 import { useState } from 'react';
 import { clsx } from 'clsx';
@@ -8,7 +8,7 @@ import Link from 'next/link';
 export default function EventCard({event}: { event: Event }) {
     const date = new Date(event.dateTimeCet);
     const timeStr = date.toLocaleString('en-GB', {hour: '2-digit', minute: '2-digit'});
-    const durationInMinutes = (new Date(event.endDateTimeCet).getTime() - new Date(event.dateTimeCet).getTime()) / 60_000;
+    const durationInMinutes = getEventDurationInMinutes(event);
 
     const [showLinks, setShowLinks] = useState<boolean>(false);
 

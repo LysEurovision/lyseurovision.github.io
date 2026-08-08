@@ -1,3 +1,5 @@
+import { BackendEvent } from '../model/event';
+
 export const FLAG_EMOJIS = {
     "Andorra": "\uD83C\uDDE6\uD83C\uDDE9",
     "Albania": "\uD83C\uDDE6\uD83C\uDDF1",
@@ -61,3 +63,11 @@ export const dateTimeFormatter = new Intl.DateTimeFormat('sv-SE', {
     hour: '2-digit', minute: '2-digit', second: '2-digit',
     hour12: false
 });
+
+export function getEventDurationInMinutes(event: BackendEvent): number {
+    return (new Date(event.endDateTimeCet).getTime() - new Date(event.dateTimeCet).getTime()) / 60_000;
+}
+
+export function getDurationInMinute(startDt: string, endDt: string): number {
+    return (new Date(endDt).getTime() - new Date(startDt).getTime()) / 60_000;
+}

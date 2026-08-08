@@ -10,6 +10,8 @@ export interface Event {
     live: boolean;
 }
 
+export type BackendEvent = Omit<Event, 'past' | 'live'>;
+
 export interface WatchLink {
     link: string;
     channel: string;
