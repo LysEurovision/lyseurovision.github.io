@@ -2,6 +2,13 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '@/app/components/header';
 import { ThemeProvider } from '@/app/components/theme-provider';
+import { Roboto, Lato } from 'next/font/google';
+
+const roboto = Lato({
+    weight: '400',
+    // subsets: ['latin', 'cyrillic'],
+    variable: '--font-roboto'
+})
 
 export const metadata: Metadata = {
     title: 'Lys',
@@ -10,7 +17,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
-        <html className="h-full" lang="en">
+        <html className={`h-full ${roboto.variable}`} lang="en">
             <body className="antialiased w-full h-full">
                 <ThemeProvider
                     attribute="data-theme"
