@@ -1,8 +1,10 @@
 'use client';
 
 import { BackendEvent } from '../../model/event';
-import { use } from 'react';
+import { use, useEffect, useState } from 'react';
 import { dateTimeFormatter, FLAG_EMOJIS, getDurationInMinute, getEventDurationInMinutes } from '@/app/(home)/utils';
+import { clsx } from 'clsx';
+import { Maximize2 } from 'lucide-react';
 
 type CountryToEvents = {
     [country: string]: { time: string, endTime: string, offset: number, duration: number }[];
@@ -82,92 +84,168 @@ export default function EventChart({loadedEvents}: { loadedEvents: Promise<Backe
         }
     }
 
+    const updateLiveIndicatorOffset = () => {
+        const now = new Date();
+        const hourMin = dateTimeFormatter.format(now).substring(11, 16).split(':');
+        const minutes = parseInt(hourMin[0]) * 60 + parseInt(hourMin[1]);
+        if (minutes < chartStartInMinutesOfDay || minutes > chartStartInMinutesOfDay + chartSpanInMinutes) {
+            return -1;
+        }
+        return Math.floor((minutes - chartStartInMinutesOfDay) / 5) + 1;
+    };
+
+    const [expanded, setExpanded] = useState(false);
+    const [liveIndicatorOffset, setLiveIndicatorOffset] = useState(updateLiveIndicatorOffset());
+
+    useEffect(() => {
+        const liveIndicatorUpdateTimer = setInterval(() => {
+            setLiveIndicatorOffset(updateLiveIndicatorOffset());
+        }, 60_000);
+        return () => clearInterval(liveIndicatorUpdateTimer);
+    }, []);
+
     return (
         <div className="w-full flex flex-col gap-2">
             <div className="text-lg font-bold">
                 Tonight's schedule
             </div>
-            <div
-                className="bg-background dark:bg-foreground/10 p-3 rounded-xl bg-background dark:bg-neutral-900 border-1 border-foreground/25 dark:border-foreground/10 grid gap-x-0.5 gap-y-1"
-                style={{
-                    gridTemplateColumns: `repeat(${(chartSpanInMinutes/5) + GRID_COL_SHIFT * 2}, minmax(0, 1fr))`,
-                    gridTemplateRows: `auto 10px repeat(${Object.keys(countryToEvents).length}, minmax(0, 1fr)) 10px`,
-                }}
-            >
-                { (timeMarkers).map(marker => (
-                    <>
-                        <div
-                            className="flex items-center justify-center row-start-1 row-span-1 text-sm"
-                            style={{
-                                gridRowStart: 1,
-                                gridRowEnd: 2,
-                                gridColumnStart: marker.col + GRID_COL_SHIFT,
-                                gridColumnEnd:  marker.col + GRID_COL_SHIFT + 1,
-                            }}
-                        >
-                            {marker.label}
-                        </div>
-                        <div
-                            style={{
-                                gridRowStart: 2,
-                                gridRowEnd: -1,
-                                gridColumnStart: marker.col + GRID_COL_SHIFT,
-                                gridColumnEnd: marker.col + GRID_COL_SHIFT + 1,
-                            }}
-                        >
-                            <div className="w-px h-full border-l-[0.5px] border-foreground/25 mx-auto"></div>
-                        </div>
-                    </>
-                ))}
 
-                {Object.entries(countryToEvents).map(([country, events], countryIndex) => (
-                    <>
-                        { events.map((event, eventIndex) => (
-                            <>
-                                {/* duration bar */}
-                                <div
-                                    className="text-center bg-sky-500 rounded-xl py-2"
-                                    style={{
-                                        gridRowStart: countryIndex + 3,
-                                        gridRowEnd: countryIndex + 4,
-                                        gridColumnStart: (event.offset / 5) + 1 + GRID_COL_SHIFT,
-                                        gridColumnEnd: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT,
-                                    }}
-                                >
-                                    {FLAG_EMOJIS[country]}
-                                </div>
-                                {/* start time */}
-                                <div
-                                    className="flex items-center justify-end text-[10.5px] text-foreground/50"
-                                    style={{
-                                        gridRowStart: countryIndex + 3,
-                                        gridRowEnd: countryIndex + 4,
-                                        gridColumnStart: (event.offset / 5) + 1,
-                                        gridColumnEnd: (event.offset / 5) + GRID_COL_SHIFT + 1,
-                                    }}
-                                >
-                                    <span className="bg-background dark:bg-neutral-900 py-1">
-                                        { event.time }
-                                    </span>
-                                </div>
-                                {/* end time */}
-                                {(events.length === 1 || eventIndex === events.length - 1 ) &&<div
-                                    className="flex items-center text-[10.5px] text-foreground/50"
-                                    style={{
-                                        gridRowStart: countryIndex + 3,
-                                        gridRowEnd: countryIndex + 4,
-                                        gridColumnStart: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT,
-                                        gridColumnEnd: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT + 1 + GRID_COL_SHIFT,
-                                    }}
-                                >
-                                    <span className="bg-background dark:bg-neutral-900 py-1">
-                                        { event.endTime }
-                                    </span>
-                                </div>}
-                            </>
-                        ))}
-                    </>
-                ))}
+            <div className="relative w-full">
+                {/* Expand button */}
+                {!expanded && <div className="w-full absolute z-10 flex items-center justify-center bottom-0 left-1/2 -translate-x-1/2">
+                    <div className="grow border-t-[0.5px] border-foreground/25 mask-alpha mask-l-from-black mask-l-to-transparent"></div>
+
+                    <div
+                        className="flex items-center gap-2 rounded-full bg-background dark:bg-neutral-800 py-2 px-3 shadow cursor-pointer"
+                        onClick={() => setExpanded(true)}
+                    >
+                        <Maximize2 className="w-4"/>Show schedule
+                    </div>
+
+                    <div className="grow border-t-[0.5px] border-foreground/25 mask-alpha mask-r-from-black mask-r-to-transparent"></div>
+                </div>}
+
+                <div
+                    className={clsx('bg-background dark:bg-foreground/10 p-3 rounded-xl bg-background dark:bg-neutral-900 border-1 border-foreground/25 dark:border-foreground/10 grid gap-x-0.5 gap-y-1',
+                        {
+                            'mask-alpha mask-b-from-black mask-b-from-50% mask-b-to-transparent mask-b-to-85% h-[160px]': !expanded
+                        }
+                    )}
+                    style={{
+                        gridTemplateColumns: `repeat(${(chartSpanInMinutes/5) + GRID_COL_SHIFT * 2}, minmax(0, 1fr))`,
+                        gridTemplateRows: `auto 10px repeat(${Object.keys(countryToEvents).length}, minmax(40px, 1fr)) 10px`,
+                    }}
+                >
+
+                    { (timeMarkers).map(marker => (
+                        <>
+                            <div
+                                className="flex items-center justify-center text-sm"
+                                style={{
+                                    gridRowStart: 1,
+                                    gridRowEnd: 2,
+                                    gridColumnStart: marker.col + GRID_COL_SHIFT,
+                                    gridColumnEnd:  marker.col + GRID_COL_SHIFT + 1,
+                                }}
+                            >
+                                {marker.label}
+                            </div>
+                            <div
+                                style={{
+                                    gridRowStart: 2,
+                                    gridRowEnd: -1,
+                                    gridColumnStart: marker.col + GRID_COL_SHIFT,
+                                    gridColumnEnd: marker.col + GRID_COL_SHIFT + 1,
+                                }}
+                            >
+                                <div className="w-px h-full border-l-[0.5px] border-foreground/25 mx-auto"></div>
+                            </div>
+                        </>
+                    ))}
+
+                    {Object.entries(countryToEvents).map(([country, events], countryIndex) => (
+                        <>
+                            { events.map((event, eventIndex) => (
+                                <>
+                                    {/* duration bar */}
+                                    <div
+                                        className={clsx('text-center rounded-xl py-2',
+                                            {
+                                                'bg-gray-300 dark:bg-neutral-700': (event.offset / 5) + (event.duration / 5) + 1 < liveIndicatorOffset,
+                                                'bg-sky-500': (event.offset / 5) + 1 <= liveIndicatorOffset && (event.offset / 5) + (event.duration / 5) + 1 >= liveIndicatorOffset,
+                                                'bg-sky-300 dark:bg-sky-700': (event.offset / 5) + 1 > liveIndicatorOffset,
+                                            }
+                                        )}
+                                        style={{
+                                            gridRowStart: countryIndex + 3,
+                                            gridRowEnd: countryIndex + 4,
+                                            gridColumnStart: (event.offset / 5) + 1 + GRID_COL_SHIFT,
+                                            gridColumnEnd: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT,
+                                        }}
+                                    >
+                                        {FLAG_EMOJIS[country]}
+                                    </div>
+                                    {/* start time */}
+                                    <div
+                                        className="z-5 flex items-center justify-end text-[10.5px] text-foreground/50"
+                                        style={{
+                                            gridRowStart: countryIndex + 3,
+                                            gridRowEnd: countryIndex + 4,
+                                            gridColumnStart: (event.offset / 5) + 1,
+                                            gridColumnEnd: (event.offset / 5) + GRID_COL_SHIFT + 1,
+                                        }}
+                                    >
+                                        <span className="bg-background dark:bg-neutral-900 py-0.5">
+                                            { event.time }
+                                        </span>
+                                    </div>
+                                    {/* end time */}
+                                    {(events.length === 1 || eventIndex === events.length - 1 ) &&<div
+                                        className="z-5 flex items-center text-[10.5px] text-foreground/50"
+                                        style={{
+                                            gridRowStart: countryIndex + 3,
+                                            gridRowEnd: countryIndex + 4,
+                                            gridColumnStart: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT,
+                                            gridColumnEnd: (event.offset / 5) + (event.duration / 5) + 2 + GRID_COL_SHIFT + 1 + GRID_COL_SHIFT,
+                                        }}
+                                    >
+                                        <span className="bg-background dark:bg-neutral-900 py-1">
+                                            { event.endTime }
+                                        </span>
+                                    </div>}
+                                </>
+                            ))}
+                        </>
+                    ))}
+
+                    {/* Live indicator*/}
+                    { liveIndicatorOffset > -1 &&
+                        <>
+                            <div
+                                style={{
+                                    gridRowStart: 2,
+                                    gridRowEnd: -1,
+                                    gridColumnStart: liveIndicatorOffset + GRID_COL_SHIFT,
+                                    gridColumnEnd: liveIndicatorOffset + GRID_COL_SHIFT + 1,
+                                }}
+                            >
+                                <div className="h-full w-[2px] rounded-full bg-foreground mx-auto"></div>
+                            </div>
+
+                            <div
+                                className="flex items-center justify-center text-sm"
+                                style={{
+                                    gridRowStart: -1,
+                                    gridRowEnd: -1,
+                                    gridColumnStart: liveIndicatorOffset + GRID_COL_SHIFT,
+                                    gridColumnEnd: liveIndicatorOffset + GRID_COL_SHIFT + 1,
+                                }}
+                            >
+                                <span className="rounded-lg px-2 bg-foreground text-background">NOW</span>
+                            </div>
+                        </>
+                    }
+                </div>
             </div>
         </div>
     )

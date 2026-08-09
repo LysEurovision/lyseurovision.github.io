@@ -15,8 +15,8 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Backen
     const sow = new Date();
     eow.setDate(now.getDate() + daysUntilSunday);
     sow.setDate(now.getDate() - daysSinceMonday);
-    const eowStr = eow.toISOString().slice(0, 10) + "T23:59:59";
-    const sowStr = sow.toISOString().slice(0, 10) + "T00:00:00";
+    const eowStr = eow.toISOString().slice(0, 10) + 'T23:59:59';
+    const sowStr = sow.toISOString().slice(0, 10) + 'T00:00:00';
 
     const events: Event[] = (use(loadedEvents) as BackendEvent[]).map(e => ({
         ...e,
@@ -93,32 +93,34 @@ export default function EventList({loadedEvents}: { loadedEvents: Promise<Backen
 
             {/* Show past button */}
             {!showPast && <div
-                className="w-fit flex items-center gap-1 mx-auto my-2 cursor-pointer rounded-full bg-background dark:bg-foreground/10 px-4 py-2 shadow-md"
+                className="w-fit flex items-center gap-2 mx-auto my-2 cursor-pointer rounded-full bg-background dark:bg-foreground/10 px-4 py-2 shadow"
                 onClick={showPastEvents}
             >
-                <ArrowUp className="w-6"/>
+                <ArrowUp className="w-4"/>
                 <div>Show past</div>
             </div>}
 
             {/* Events */}
-            {displayedEvents.length > 0 && <div className="flex flex-col gap-2">
-                {displayedEvents.map((event, index) => (
-                    // add header at the beginning of each month
-                    <>
-                        {(index === 0 || event.dateTimeCet.substring(5, 7) != displayedEvents[index - 1].dateTimeCet.substring(5, 7))
-                            && <div className="text-lg font-bold">
-                                { new Intl.DateTimeFormat('en-GB', { timezone: 'Europe/Vienna', month: 'long' }).format(new Date(event.dateTimeCet)) }
-                            </div>
-                        }
-                        <EventCard event={event}/>
-                    </>
-                ))}
-            </div>}
+            {displayedEvents.length > 0 && displayedEvents.map((event, index) => (
+                // add header at the beginning of each month
+                <div key={`event-${index}`} className="flex flex-col gap-2">
+                    {(index === 0 || event.dateTimeCet.substring(5, 7) != displayedEvents[index - 1].dateTimeCet.substring(5, 7))
+                        && <div className="text-lg font-bold">
+                            {new Intl.DateTimeFormat('en-GB', {
+                                timezone: 'Europe/Vienna',
+                                month: 'long'
+                            }).format(new Date(event.dateTimeCet))}
+                        </div>
+                    }
+                    <EventCard event={event}/>
+                </div>
+            ))}
 
             {/* No events to show (based on constraining filters) */}
             {displayedEvents.length === 0 && showThisWeek && <div className="mt-3 flex flex-col gap-3 text-center">
                 <div className="text-3xl">No event to show :(</div>
-                <div>Try disabling one of your filters to broaden your search{ showPast ? <>.</> : <>, or expand your search to past events by clicking the "Show past" button above</>}</div>
+                <div>Try disabling one of your filters to broaden your search{showPast ? <>.</> : <>, or expand your
+                    search to past events by clicking the "Show past" button above</>}</div>
             </div>}
 
             {/* No more events to show */}
